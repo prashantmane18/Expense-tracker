@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+
+<style>
+	
+
+.login {
+	margin-left:500px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+
+.login h2 {
+    
+    margin-bottom: 20px;
+}
+
+
+.login div {
+    margin-bottom: 15px;
+}
+
+.login label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+
+
+.login a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+</style>
+</head>
+<body>
+<div class="login">
+<h2>Registration</h2>
+	<form th:action="@{/register}" th:object="${user}" method="post">
+	<div>
+		<label>Username:</label>
+		<input type="text"  th:field="*{username}">
+	</div>
+	
+	<div>
+	<label>Password:</label>
+		<input type="password" th:field="*{password}">
+	</div>
+	
+	<div>
+	<label>Email:</label>
+		<input type="email" th:field="*{email}">
+	</div>
+	
+	<div>
+	<label>Full Name:</label>
+		<input type="text"  th:field="*{fullName}">
+	</div>
+	
+	<button type="submit">Sign Up</button>
+	
+		
+	</form>
+	
+	<a href="/login">Already have an account? Log In here</a>
+	</div>
+</body>
+</html>

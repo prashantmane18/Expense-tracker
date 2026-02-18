@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+</head>
+<body>
+	<h2 align="center">Welcome to Expense tracker</h2>
+	<div align="center" style="color: orange;">
+		<a th:href="@{/add}">Add Expense</a> &nbsp; &nbsp; <a th:href="@{/expenseList}">Expense List</a>
+	</div><br>
+	Track and manage your expenses effectively. Use the navigation links to add new expense or view your expense history
+	<br><hr>
+		<form th:action="@{/logout}" method="post">
+			<button type="submit">Logout</button>
+		</form>
+</body>
+</html>

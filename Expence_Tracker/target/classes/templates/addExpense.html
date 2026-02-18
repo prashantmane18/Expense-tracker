@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New Expense</title>
+</head>
+<style>
+	
+
+.login {
+	margin-left:500px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+
+.login h2 {
+    
+    margin-bottom: 20px;
+}
+
+
+.login div {
+    margin-bottom: 15px;
+}
+
+.login label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+
+
+.login a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+
+</style>
+<body>
+
+	
+		<div class="login">
+		
+		<h2>Add New Expense</h2>
+		<form th:action="@{/save} " th:object="${expense}" method="post">
+			<div>
+			<label>Expense Name</label>
+				<input type="text" th:field="*{expenseName}">
+
+			</div>
+			
+			<div>
+			<label>Amount</label>
+				<input type="number" th:field="*{amount}">
+			</div>
+			
+			<div>
+			<label>Date</label>
+				<input type="date" th:field="*{date}">
+			</div>
+			
+			<div>
+			<label>Discription</label>
+				<input type="text" th:field="*{description}">
+			</div>
+			
+			<button type="submit">Save</button>
+	</form>
+	
+		</div>
+
+</body>
+</html>
